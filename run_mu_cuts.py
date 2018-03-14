@@ -1,17 +1,17 @@
 import ROOT, math, sys, os
 from ROOT import *
-import numpy as np
+#import numpy as np
 import glob, os, sys, subprocess
 from subprocess import call
 #os.getenv('$DYLD_LIBRARY_PATH')
 #os.getenv('ROOTSYS')
 
-pr_files = glob.glob('pr_files/pr_*.root')
+pr_files = glob.glob('../pr_files/pr_*.root')
 ####################################################################
 #########################PARAMETERS#################################
 
 t0 = -3200 #ticks
-result_folder = 'mu_candidates/'
+result_folder = '../mu_candidates/'
 file_name = 'Stop_mu_'
 
 ####################################################################
@@ -23,7 +23,7 @@ else:
 
 n = 0
 for x in pr_files:
-	os.system('python Cosmic_discriminator.py ' + x) #Applies cuts on events resulting from wirecell chain.
+	os.system('python mu_cuts.py ' + x) #Applies cuts on events resulting from wirecell chain.
 	n += 1
 #####################################################################
 ############################TO BEE###################################
@@ -69,5 +69,5 @@ for i in xrange(len(pr_files)):
 	os.system('mv ' + str(folder) + '-' + label_tfcuts + '.json data/' + str(folder))
 	folder += 1
 
-os.system('zip -r to_upload.zip data')
+os.system('zip -r ../to_upload.zip data')
 print("DONE")

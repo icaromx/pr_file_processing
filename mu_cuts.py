@@ -25,7 +25,7 @@ x_anode_th = 3.0
 x_cathode_th = 4.0 
 
 file_name = 'Stop_mu_'
-result_folder = 'mu_candidates/'
+result_folder = '../mu_candidates/'
 mu_file = result_folder + file_name + 'run_' + str(run_num) + '_ev_' + str(ev_num) + '.root'
 ##################################################################
 clusters = []
@@ -168,12 +168,6 @@ for track in All_tracks:
 	if piercing:
 		continue
 """
-	
-#print(len(All_tracks))
-#print(str(len(kept_tracks)) + ' of ' + str(len(kept_tracks_noflscut)) + ' of ' + str(len(All_tracks)))
-#print(str(len(kept_tracks)) + ' tracks kept of ' + str(len(All_tracks)))
-#print(float(len(kept_tracks))/len(All_tracks)*100.00)
-
 #####################################################################
 ######################SAVING HISTOGRAMS##############################
 #####################################################################
